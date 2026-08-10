@@ -1,0 +1,27 @@
+# --- CHAVES E SEGREDOS ---
+*.pem
+*.key
+id_rsa*
+*.gpg
+*secrets*
+*.env
+*token*
+
+# --- HISTÓRICOS (Evita vazar comandos digitados no terminal) ---
+*history*
+.bash_history
+.zsh_history
+*.log
+
+# --- CACHE E SESSÕES DE NAVEGADORES/APPS ---
+*Cache*
+*cache*
+*GPUCache*
+*Session*
+*.db
+*.sqlite
+
+# --- ARQUIVOS TEMPORÁRIOS ---
+*.tmp
+*.swp
+~*
