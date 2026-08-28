@@ -1,0 +1,330 @@
+/**
+ * Tema Completo: Rofi Cards + Transparência e Cor Padronizadas (Perfil Transparente & Letras Beges)
+ */
+
+/* =========================================================
+   VARIÁVEIS DE PADRONIZAÇÃO
+   ========================================================= */
+:root {
+    /* COR E TRANSPARÊNCIA ÚNICA PARA TODOS OS PAINÉIS */
+    --glass-bg: rgba(28, 7, 11, 0.45);
+
+    /* Efeito de Vidro Embaçado Padronizado */
+    --glass-blur: blur(5px);
+
+    /* Cores dos Cards Beges (Para a barra lateral / DMs) */
+    --card-bege-bg: #EFE4D1;
+    --card-bege-hover: #FFF7EB;
+    --card-bege-text: #130406;
+    --card-bege-subtext: #4a151b;
+
+    /* Cor do Card Selecionado (Vinho Rofi) */
+    --accent-red: #4a0b0f;
+}
+
+/* =========================================================
+   0. LIBERAR TRANSPARÊNCIA GERAL
+   ========================================================= */
+body, #app-mount, [class*="app_"], [class*="bg_"], [class*="base_"] {
+    background: transparent !important;
+}
+
+/* =========================================================
+   1. CHAT, ABA DE AMIGOS, PAINEL DIREITO E BARRA SUPERIOR
+   ========================================================= */
+main, 
+[class*="chat_"], 
+[class*="chatContent_"],
+[class*="peopleColumn_"],
+[class*="nowPlayingColumn_"],
+header[class*="header_"],
+section[class*="title_"],
+[class*="upperContainer_"],
+div[class*="container_"][class*="themed_"],
+section[class*="container_"][class*="themed_"] {
+    background-color: var(--glass-bg) !important;
+    backdrop-filter: var(--glass-blur) !important;
+    border: none !important;
+    border-bottom: none !important;
+    box-shadow: none !important;
+}
+
+[class*="container_"] > [class*="tabBody_"],
+[class*="peopleList_"],
+[class*="userInfo_"] {
+    background: transparent !important;
+}
+
+/* =========================================================
+   1.1. CARDS DO "ATIVO AGORA" (Jogos, Streams e Spotify)
+   ========================================================= */
+[class*="nowPlayingColumn_"] [class*="itemCard_"],
+[class*="nowPlayingColumn_"] [class*="outer_"],
+[class*="nowPlayingColumn_"] [class*="inset_"],
+[class*="nowPlayingColumn_"] [class*="section_"],
+[class*="nowPlayingColumn_"] [class*="container_"],
+[class*="nowPlayingColumn_"] [class*="header_"] {
+    background: transparent !important;
+    background-color: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+}
+
+/* =========================================================
+   2. LISTA DE SERVIDORES
+   ========================================================= */
+nav[class*="guilds_"] {
+    background-color: var(--glass-bg) !important;
+    backdrop-filter: var(--glass-blur) !important;
+    border: none !important;
+    border-right: none !important;
+}
+
+nav[class*="guilds_"] [class*="scroller_"],
+nav[class*="guilds_"] [class*="tree_"],
+nav[class*="guilds_"] [class*="wrapper_"] {
+    background-color: transparent !important;
+}
+
+/* =========================================================
+   3. BARRA LATERAL - CANAIS E DMS
+   ========================================================= */
+[class*="sidebar_"] {
+    background-color: var(--glass-bg) !important;
+    backdrop-filter: var(--glass-blur) !important;
+    border: none !important;
+    border-right: none !important;
+}
+
+[class*="sidebar_"] [class*="container_"],
+[class*="sidebar_"] [class*="scroller_"],
+[class*="privateChannels_"] {
+    background: transparent !important;
+}
+
+/* Caixa de Busca */
+[class*="searchBar_"],
+[class*="searchBarComponent_"] {
+    background-color: var(--glass-bg) !important;
+    border: none !important;
+    color: #EFE4D1 !important;
+}
+
+/* =========================================================
+   4. PAINEL DE USUÁRIO E VOZ (RODAPÉ)
+   ========================================================= */
+[class*="sidebar_"] [class*="panels_"] {
+    background-color: var(--glass-bg) !important;
+    border: none !important;
+    border-top: none !important; 
+}
+
+/* =========================================================
+   5. BARRA DE TÍTULO DA JANELA E ELEMENTOS DO TOPO
+   ========================================================= */
+[class*="typeWindows_"],
+[class*="titleBar_"],
+[class*="wordmark_"] {
+    background: transparent !important;
+    background-color: transparent !important;
+    backdrop-filter: none !important;
+    border: none !important;
+    box-shadow: none !important;
+}
+
+/* Limpa fundos internos dos ícones e textos do topo */
+[class*="title_"] > *,
+[class*="children_"] > *,
+[class*="toolbar_"],
+[class*="topPill_"],
+[class*="iconWrapper_"],
+[class*="icon_"] {
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+}
+
+/* Ícones da barra superior */
+[class*="toolbar_"] [class*="icon_"],
+[class*="iconWrapper_"] svg {
+    color: #EFE4D1 !important;
+}
+
+/* Abas (Amigos, Disponível, Todos) */
+[class*="tabBar_"] [class*="item_"] {
+    color: #EFE4D1 !important;
+}
+
+[class*="tabBar_"] [class*="selected_"] {
+    background-color: var(--card-bege-bg) !important;
+    color: var(--card-bege-text) !important;
+    border-radius: 4px !important;
+}
+
+[class*="tabBar_"] [class*="addFriend_"] {
+    background-color: var(--accent-red) !important;
+    color: #EFE4D1 !important;
+}
+
+/* =========================================================
+   6. CARDS BEGE (Amigos, DMs, Nitro, Loja, Missões)
+   ========================================================= */
+[class*="privateChannels_"] [class*="interactive_"],
+[class*="privateChannels_"] [class*="link_"],
+[class*="sidebar_"] [class*="containerDefault_"] [class*="interactive_"],
+[class*="channel_"][class*="interactive_"] {
+    background-color: var(--card-bege-bg) !important;
+    border-radius: 6px !important;
+    margin-bottom: 4px !important;
+    border: none !important;
+    overflow: hidden !important; 
+}
+
+[class*="privateChannels_"] [class*="interactive_"] [class*="layout_"],
+[class*="privateChannels_"] [class*="interactive_"] [class*="content_"],
+[class*="privateChannels_"] [class*="interactive_"] [class*="subText_"] {
+    background: transparent !important;
+}
+
+[class*="privateChannels_"] [class*="interactive_"] [class*="name_"],
+[class*="privateChannels_"] [class*="link_"] [class*="name_"],
+[class*="sidebar_"] [class*="containerDefault_"] [class*="interactive_"] [class*="name_"],
+[class*="channel_"][class*="interactive_"] * {
+    color: var(--card-bege-text) !important;
+}
+
+[class*="privateChannels_"] [class*="interactive_"] [class*="subText_"],
+[class*="privateChannels_"] [class*="interactive_"] [class*="activity_"],
+[class*="privateChannels_"] [class*="interactive_"] [class*="activityText_"] {
+    color: var(--card-bege-subtext) !important; 
+}
+
+[class*="privateChannels_"] [class*="interactive_"]:hover,
+[class*="privateChannels_"] [class*="link_"]:hover {
+    background-color: var(--card-bege-hover) !important;
+}
+
+[class*="privateChannels_"] [class*="selected_"] [class*="interactive_"],
+[class*="privateChannels_"] [class*="selected_"] [class*="link_"],
+[class*="privateChannels_"] [class*="interactive_"][class*="selected_"],
+[class*="channel_"][class*="interactive_"][class*="selected_"] {
+    background-color: var(--accent-red) !important;
+}
+
+[class*="privateChannels_"] [class*="selected_"] *,
+[class*="privateChannels_"] [class*="interactive_"][class*="selected_"] * {
+    color: #EFE4D1 !important;
+}
+
+/* Perfil do usuário no rodapé */
+[class*="sidebar_"] [class*="panels_"] [class*="avatarWrapper_"] {
+    background-color: var(--card-bege-bg) !important;
+    border-radius: 6px !important;
+    margin: 4px !important;
+    padding: 4px 8px !important;
+    border: none !important;
+}
+
+[class*="sidebar_"] [class*="panels_"] [class*="avatarWrapper_"] [class*="nameTag_"] * {
+    color: var(--card-bege-text) !important;
+}
+
+[class*="sidebar_"] [class*="panels_"] [class*="avatarWrapper_"]:hover {
+    background-color: var(--card-bege-hover) !important;
+}
+
+[class*="sidebar_"] [class*="panels_"] [class*="rtcConnectionStatus_"] ~ div,
+[class*="sidebar_"] [class*="panels_"] [class*="channel_"],
+[class*="sidebar_"] [class*="panels_"] [class*="subtext_"],
+[class*="sidebar_"] [class*="panels_"] a,
+[class*="sidebar_"] [class*="panels_"] button:not([class*="buttonColor_"]) {
+    color: #EFE4D1 !important;
+}
+
+[class*="sidebar_"] [class*="panels_"] [class*="button_"][class*="buttonColor_"] {
+    background-color: rgba(239, 228, 209, 0.1) !important;
+    color: #EFE4D1 !important;
+    border: none !important;
+}
+
+[class*="sidebar_"] [class*="panels_"] [class*="button_"][class*="buttonColor_"]:hover {
+    background-color: var(--card-bege-bg) !important;
+    color: var(--card-bege-text) !important;
+}
+
+/* =========================================================
+   7. CARD DE PERFIL (POPOUT 100% TRANSPARENTE E LETRAS BEGES)
+   ========================================================= */
+/* Container principal e janelas modais do perfil */
+[class*="userPopoutOuter_"],
+[class*="userPopoutInner_"],
+[class*="userProfileModalOuter_"],
+[class*="userProfileModalInner_"],
+[class*="accountPopout_"],
+[class*="menu_"][class*="styleFixed_"],
+[class*="menu_"] {
+    --profile-body-background-color: var(--glass-bg) !important;
+    --bg-surface-overlay: var(--glass-bg) !important;
+    --bg-surface-overlay-tmp: var(--glass-bg) !important;
+    --background-floating: var(--glass-bg) !important;
+    background-color: var(--glass-bg) !important;
+    backdrop-filter: var(--glass-blur) !important;
+    border: none !important;
+    box-shadow: none !important;
+}
+
+/* Remove todos os fundos escuros dos blocos internos (Atividade, Status, Menus, Voz) */
+[class*="userPopoutInner_"] [class*="section_"],
+[class*="userPopoutInner_"] [class*="activity_"],
+[class*="userPopoutInner_"] [class*="statusBubble_"],
+[class*="userPopoutInner_"] [class*="voiceSection_"],
+[class*="userPopoutOverlayBackground_"],
+[class*="userProfileModalOverlayBackground_"],
+[class*="accountPopout_"] [class*="section_"],
+[class*="menu_"] [class*="item_"],
+[class*="popout_"] [class*="container_"] {
+    background-color: rgba(0, 0, 0, 0.2) !important;
+    background: rgba(0, 0, 0, 0.2) !important;
+    border: none !important;
+    box-shadow: none !important;
+}
+
+/* Destaque discreto ao passar o mouse nos itens do perfil */
+[class*="userPopoutInner_"] [class*="section_"]:hover,
+[class*="userPopoutInner_"] [class*="activity_"]:hover,
+[class*="menu_"] [class*="item_"]:hover {
+    background-color: rgba(239, 228, 209, 0.12) !important;
+}
+
+/* FORÇAR TODAS AS LETRAS, TEXTOS E ÍCONES DO PERFIL PARA BEGE CLARO (#EFE4D1) */
+[class*="userPopoutOuter_"] *,
+[class*="userPopoutInner_"] *,
+[class*="userProfileModalOuter_"] *,
+[class*="userProfileModalInner_"] *,
+[class*="accountPopout_"] *,
+[class*="menu_"] * {
+    color: #EFE4D1 !important;
+    fill: #EFE4D1 !important;
+}
+/* =========================================================
+   TRANSPARÊNCIA NA TELA DE CHAMADA DE VOZ / VÍDEO
+   ========================================================= */
+
+/* Remove o fundo preto gigante da área da chamada */
+[class*="callContainer_"],
+[class*="callContainer_"] > div,
+[class*="videoGrid_"],
+[class*="wrapper_"][class*="callContainer_"],
+[class*="gradientContainer_"] {
+    background: transparent !important;
+    background-color: transparent !important;
+}
+
+/* Torna o card preto dos usuários transparente com blur */
+[class*="tile_"],
+[class*="tile_"] [class*="tileChild_"],
+[class*="userWrapper_"] {
+    background-color: var(--glass-bg, rgba(20, 5, 8, 0.45)) !important;
+    backdrop-filter: var(--glass-blur, blur(8px)) !important;
+    border: none !important;
+}
