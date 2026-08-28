@@ -1,0 +1,4 @@
+BackgroundMode=TERMINAL_BACKGROUND_TRANSPARENT
+BackgroundDarkness=0.85
+ColorBackground=#000000
+ColorPalette=#000000;#800000;#4e9a06;#c4a000;#3465a4;#800000;#06989a;#d3d7cf;#555753;#ef2929;#8ae234;#fce94f;#729fcf;#5e1914;#34e2e2;#eeeeec
